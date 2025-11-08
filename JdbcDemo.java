@@ -1,38 +1,3 @@
-// Improved Student-Course-College Database Management System using JDBC
-
-// Key Improvements:
-// 1. Switched to PreparedStatements to prevent SQL injection and improve security.
-// 2. Added resource management with try-with-resources where possible.
-// 3. Improved error handling with more informative messages and transaction management.
-// 4. Modularized the code: Created separate methods for each operation, improved menu structure.
-// 5. Added input validation: Check if IDs exist before operations to avoid invalid actions.
-// 6. Fixed bugs: Removed duplicated choice==12, fixed redundant connection attempts, corrected initial data issues in comments.
-// 7. Added new functionalities:
-//    - Added StudentCourses table for direct student-course enrollment (many-to-many).
-//    - New options: Enroll student in course, remove student from course, print student's enrolled courses.
-//    - Update student details (name, age).
-//    - Update course details (name, duration).
-//    - Print all students, all colleges, all courses.
-//    - Generate simple reports: Number of students per college, average age per college.
-//    - Search students by name.
-//    - Remove course from college.
-// 8. Enhanced menu with more options and better user experience.
-// 9. Set auto-commit to false at start, with explicit commit/rollback.
-// 10. Used OOP lightly: Could add entity classes, but kept simple for now.
-// 11. Assumed mysql-connector-java.jar is in classpath.
-
-// Updated SQL Schema (add this to your SQL file):
-// ADD TO EXISTING SCHEMA:
-// CREATE TABLE StudentCourses (
-//     student_id INT,
-//     course_id INT,
-//     PRIMARY KEY (student_id, course_id),
-//     FOREIGN KEY (student_id) REFERENCES Student(student_id) ON DELETE CASCADE,
-//     FOREIGN KEY (course_id) REFERENCES Courses(course_id) ON DELETE CASCADE
-// );
-
-// Note: Fix initial data - college_id_choice should reference valid colleges (1-4 in sample).
-// In sample updates, change invalid 6 to valid IDs, e.g., 3.
 
 // Import required packages
 import java.sql.*;
